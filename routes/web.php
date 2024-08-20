@@ -9,11 +9,11 @@ Route::get('/eboostify', function () {
 // GRUPOS DE ROTAS PARA OS USERS
 Route::prefix("eboostify/user")->group(function(){
 
-    Route::get('', function(){
-        return "user";
+    Route::get('/{user}', function(\App\Models\User $user){
+        return $user;
     });
 
-    Route::get('/{id}', function(){
+    Route::get('/jkhhj', function(){
         return "Detalhes do usuário";
     });
 });
