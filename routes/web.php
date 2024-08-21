@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 // PRINCIAPAL ROUTA
+Route::get('eboostify', function(){
+    return view('welcome');
+});
 
 /* ============================= ROUTAS DO USUÁRIO =============================*/
-Route::get('eboostify/usuario/{user}', [\App\Http\Controllers\UserController::class, 'show']);
+Route::get('eboostify/user/{user}', [\App\Http\Controllers\UserController::class, 'show'])->name('user.show');
+Route::get('eboostify/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
-// Route::get('/eboostify', function () {
-//     return view("welcome");
-// });
 
 // // GRUPOS DE ROTAS PARA OS USERS
 // Route::prefix("eboostify/user")->group(function(){
@@ -28,4 +29,6 @@ Route::get('eboostify/usuario/{user}', [\App\Http\Controllers\UserController::cl
 //     return $r;
 // });
 
-
+Route::get('erro', function(){
+    return view('erro');
+})->name('erropage');
