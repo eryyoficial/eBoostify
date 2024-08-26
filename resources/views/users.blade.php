@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 
+@section('title', 'Lista dos Usuários')
 @section('content')
 @foreach ($users as $user)
 {{$user->id}} - {{$user->name}} <br>
